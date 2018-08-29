@@ -1,6 +1,13 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav [mode]="push">
-    aaaa
+  <mat-sidenav #sidenav [mode]="over">
+    <mat-list dense>
+      <mat-list-item>
+          <button mat-button>Календарь событий</button>
+      </mat-list-item>
+      <mat-list-item>
+          <button mat-button>Список клиентов</button>
+      </mat-list-item>
+    </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
