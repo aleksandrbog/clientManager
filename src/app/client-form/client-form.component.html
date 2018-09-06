@@ -1,3 +1,23 @@
-<p>
-  client-form works!
-</p>
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+        <mat-card-title>
+            Новый клиент
+        </mat-card-title>
+        <mat-card-content>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Имя" formControlName="firstName">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Фамилия" formControlName="lastName">
+                </mat-form-field>
+
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit" color="primary" [disabled]="!clientForm.valid">Добавить</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
