@@ -2,10 +2,10 @@
   <mat-sidenav #sidenav [mode]="over">
     <mat-list dense>
       <mat-list-item>
-          <button mat-button>Календарь событий</button>
+          <button mat-button routerLink='calendar'>Календарь событий</button>
       </mat-list-item>
       <mat-list-item>
-          <button mat-button>Список клиентов</button>
+          <button routerLink='clients' mat-button>Список клиентов</button>
       </mat-list-item>
     </mat-list>
   </mat-sidenav>
@@ -16,5 +16,6 @@
       </button>
       {{title}}
     </mat-toolbar>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
