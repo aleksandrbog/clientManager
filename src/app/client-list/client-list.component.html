@@ -1,0 +1,38 @@
+<div class="container">
+  <table mat-table [dataSource]="dataSource" class="item">
+
+    <ng-container matColumnDef="fname">
+      <th mat-header-cell *matHeaderCellDef> Имя </th>
+      <td mat-cell *matCellDef="let element"> {{element.fname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lname">
+      <th mat-header-cell *matHeaderCellDef> Фамилия </th>
+      <td mat-cell *matCellDef="let element"> {{element.lname}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="contacts">
+      <th mat-header-cell *matHeaderCellDef> Контакты </th>
+      <td mat-cell *matCellDef="let element"> {{element.contacts}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Действия </th>
+      <td mat-cell *matCellDef="let element">
+        <span>
+          <button mat-icon-button matTooltip="Редактировать">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+<span class="add">
+  <button mat-fab routerLink="add" matTooltip="Добавить клиента">
+    <mat-icon>add_circle</mat-icon>
+  </button>
+</span>
